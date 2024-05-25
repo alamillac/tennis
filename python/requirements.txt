@@ -1,0 +1,6 @@
+matplotlib
+numpy
+pytest
+docopt
+protobuf==3.20.0
+grpcio==1.62.1
