@@ -57,7 +57,7 @@ pip install .
 
 The goal is to train a small team of agents to play soccer.
 
-![Trained Agent][image1]
+![Trained Agent][image2]
 
 You can read more about this environment in the ML-Agents GitHub [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md).
 
