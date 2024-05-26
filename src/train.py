@@ -22,11 +22,11 @@ env_path = {
         "soccer_checkpoint.pth",
         1000,
         128,
-    )
+    ),
 }
 
 env_name = "tennis"
-#env_name = "soccer"
+# env_name = "soccer"
 env_filename, save_path, save_checkpoint_path, max_episodes, batch_size = env_path[
     env_name
 ]
@@ -51,7 +51,7 @@ trainer = Trainer(
     max_t=1000,
     save_model_path=save_path,
     save_checkpoint_path=save_checkpoint_path,
-    override_checkpoint=False,
+    override_checkpoint=True,
     writer=writer,
 )
 
@@ -60,7 +60,8 @@ agent = TD3Agent(
     action_bounds=action_bounds,
     batch_size=batch_size,
     n_envs=env.num_agents,
-    noise_decay_steps=2000,
+    PER=True,
+    noise_decay_steps=max_episodes,
 )
 
 scores = trainer.train_until(env, agent, desired_score=0.5, consecutive_episodes=100)

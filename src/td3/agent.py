@@ -15,7 +15,7 @@ TAU = 1e-2  # for soft update of target parameters
 LR_ACTOR = 5e-4  # learning rate of the actor
 LR_CRITIC = 5e-4  # learning rate of the critic
 WEIGHT_DECAY = 0  # L2 weight decay
-UPDATE_EVERY = 80  # how often to update the network
+UPDATE_EVERY = 4  # how often to update the network
 MIN_BUFFER_SIZE = 1e4  # minimum buffer size before learning
 
 ACTOR_HIDDEN_LAYER_1 = 256
@@ -108,9 +108,9 @@ class TD3Agent():
 
         # Replay memory
         self.per = PER
+        self.beta = PER_BETA_START
         if self.per:
             self.memory = PrioritizedReplayBuffer(action_size, BUFFER_SIZE, batch_size, PER_ALPHA)
-            self.beta = PER_BETA_START
         else:
             self.memory = ReplayBuffer(action_size, BUFFER_SIZE, batch_size)
 
