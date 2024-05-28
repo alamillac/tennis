@@ -119,11 +119,12 @@ class PrioritizedReplayBuffer:
         sampling_weights = (
             torch.from_numpy(prob_weights[idx_experiences]).float().to(device)
         )  # Get the weights of the sampled experiences
+
         states = torch.from_numpy(states).float().to(device)
-        actions = torch.from_numpy(actions).float().to(device)
         rewards = torch.from_numpy(rewards).float().to(device)
         next_states = torch.from_numpy(next_states).float().to(device)
         dones = torch.from_numpy(dones).int().to(device)
+        actions = torch.from_numpy(actions).float().to(device)
 
         return (
             states,
