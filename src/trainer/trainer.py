@@ -119,7 +119,7 @@ class Trainer:
             if self.disable_bar_progress:
                 score_str = f"\rEpisode {i_episode + 1} Score [{score:.2f} {avg_score_5:.2f} {avg_score_100:.2f}]"
                 print(score_str, end="")
-                if i_episode % 10 == 0:
+                if i_episode % 100 == 0:
                     print(score_str)
 
             if self.writer:

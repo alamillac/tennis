@@ -14,14 +14,14 @@ env_path = {
         "tennis.pth",
         "tennis_checkpoint.pth",
         8000,
-        128,
+        256,
     ),
     "soccer": (
         "Soccer_Linux/Soccer.x86_64",
         "soccer.pth",
         "soccer_checkpoint.pth",
         1000,
-        128,
+        256,
     ),
 }
 

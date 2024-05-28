@@ -8,7 +8,7 @@ from noise import NormalNoise
 
 from .model import Actor, Critic
 
-BUFFER_SIZE = int(1e6)  # replay buffer size
+BUFFER_SIZE = int(1e5)  # replay buffer size
 BATCH_SIZE = 256  # minibatch size
 GAMMA = 0.99  # discount factor
 TAU = 1e-2  # for soft update of target parameters
@@ -25,9 +25,11 @@ CRITIC_HIDDEN_LAYER_1 = 256
 CRITIC_HIDDEN_LAYER_2 = 128
 
 # Gradient clipping
-POLICY_MAX_GRAD_NORM = 1.0
-VALUE_MAX_GRAD_NORM = 1.0
-#VALUE_MAX_GRAD_NORM = float("inf")
+#POLICY_MAX_GRAD_NORM = 1.0
+#VALUE_MAX_GRAD_NORM = 1.0
+
+POLICY_MAX_GRAD_NORM = float("inf")
+VALUE_MAX_GRAD_NORM = float("inf")
 
 # Prioritized Experience Replay (PER)
 PER_ALPHA = 0.6
