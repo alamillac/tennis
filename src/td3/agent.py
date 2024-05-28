@@ -110,7 +110,7 @@ class TD3Agent():
         self.per = PER
         self.beta = PER_BETA_START
         if self.per:
-            self.memory = PrioritizedReplayBuffer(action_size, BUFFER_SIZE, batch_size, PER_ALPHA)
+            self.memory = PrioritizedReplayBuffer(state_size, action_size, BUFFER_SIZE, batch_size, PER_ALPHA)
         else:
             self.memory = ReplayBuffer(action_size, BUFFER_SIZE, batch_size)
 
